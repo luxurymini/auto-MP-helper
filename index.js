@@ -9,9 +9,9 @@ const cheackPerMP = 0.6; // 60퍼센트 이하일경우 먹음
 const MPitemNumber = 6562;
 
 module.exports = function autoMp(dispatch) {
-	let cid = null,
-		isCoolTime = false,
-		enabled = true;
+	let cid = null;
+	let isCoolTime = false;
+	let enabled = true;
 
 	//로그인정보
 	dispatch.hook('S_LOGIN', 1, event => {
