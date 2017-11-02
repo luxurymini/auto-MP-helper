@@ -37,7 +37,7 @@ module.exports = function autoMp(dispatch) {
 
 	//엠피 변화가 있을때
 	dispatch.hook('S_PLAYER_CHANGE_MP', 1, event => {
-		if (!enabled && coolTime) return;
+		if (!enabled && isCoolTime) return;
 
 		currentMp = event.currentMp;
 		maxMp = event.maxMp;
@@ -56,7 +56,7 @@ module.exports = function autoMp(dispatch) {
 	}
 
 	function useItem() {
-		if (coolTime) return;
+		if (isCoolTime) return;
 		dispatch.toServer('C_USE_ITEM', 1, {
 			ownerId: cid,
 			item: MPitemNumber,
