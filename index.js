@@ -37,7 +37,7 @@ module.exports = function autoMp(dispatch) {
 
 	//엠피 변화가 있을때
 	dispatch.hook('S_PLAYER_CHANGE_MP', 1, event => {
-		if (!enabled && isCoolTime) return;
+		if (!enabled || isCoolTime) return;
 
 		currentMp = event.currentMp;
 		maxMp = event.maxMp;
